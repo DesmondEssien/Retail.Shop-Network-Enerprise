@@ -1,2 +1,2 @@
-# Retail.Shop-Network-Enerprise
+# A fully designed Retail Shop Network Enterprise built in Cisco Packet Tracer, simulating a realistic retail store environment with POS terminals, self-checkout systems, back-office administration, and guest Wi-Fi access.
 Designed a Retail Shop Network Enterprise in Cisco Packet Tracer using a 3-tier hierarchical model. Includes POS &amp; SCO terminals, inventory/manager PCs, guest Wi-Fi, Layer 3 switching, dual-router WAN edge, and a payment server. Demonstrates VLAN segmentation, structured cabling, and retail network design.
