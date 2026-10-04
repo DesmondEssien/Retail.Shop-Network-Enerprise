@@ -1,0 +1,38 @@
+ON FRONT-STORE-SW1
+#int fa0/1-7
+#sw port-security maximum 1
+#sw port-security mac-address sticky
+#sw port-security violation shutdown
+#show port-security
+#sh ip int br
+#int ran fa0/9-24
+#sw mode ac 
+#sw access vlan 999
+#shutdown
+#int g0/2
+#sw mode access
+#sw ac vlan 999
+#shutdown
+#ex
+
+ON BACK-STORE-SW1
+#int ran fa04-24
+#sw mode ac
+#sw ac vlan 999
+#shutdown
+#ex
+
+#int g0/1
+#sw mode ac
+#sw ac vlan 999
+#shutdown
+#ex
+
+ON L3-SW1
+#sh ip int br
+#int fa0/2-24
+#sw mode ac 
+#sw ac vlan 999
+#shutdown
+#ex
+

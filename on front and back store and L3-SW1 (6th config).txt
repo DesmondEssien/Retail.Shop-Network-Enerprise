@@ -1,0 +1,11 @@
+REPEAT THE SAME CONFIGURATIONS ON ALL THE THREE SWITCHES( FRONT,BACK AND L3_SW1)
+
+#ip domain-name retail.local
+#username admin privilege 15 secret ...(password you entered)
+#crypto key generate rsa
+#1024
+#line vty 0 15
+#login local
+#transport input ssh
+#end
+

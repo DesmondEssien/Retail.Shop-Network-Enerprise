@@ -1,0 +1,64 @@
+ON L3-SW1
+#int fa0/1
+#description ROUTE-LINK-TO-EDGE-R1
+#no switchport
+#ip add 10.0.02 255.255.255.252
+#no shutdown
+#ex
+
+ON EDGE-R1
+#hostname EDGE-R1
+#no ip domain-lookup
+#int g0/1
+#description INSIDE-TO-L3-SW1
+#ip add 10.0.0.1 255.255.255.252
+#ip nat inside
+#no shutdown
+#ex
+
+ON EDGE-R1
+ping 10.0.0.2
+
+ON L3-SW1
+#do sh ip route
+#ip route 0.0.0.0 0.0.0.0 10.0.0.1
+#sh ip route
+#end
+
+ON EDGE-R1
+#int g0/0
+#description OUTSIDE-TO-ISP
+#ip add 203.0.113.2 255.255.255.0
+#ip nat outside
+#no shutdown
+#ex
+
+ON ISP-R1
+#hostname ISP-R1
+#no domain-lookup
+#int g0/0
+#description TO-RETAIL-EDGE
+#ip add 203.0.113.1 255.255.255.0
+#no shutdown
+#ex
+
+ON EDGE-R1
+#ping 203.0.113.1
+
+ISP-R1
+#int g0/1
+#description TO-PAYMENT-SERVER
+#ip add 198.51.100.1 255.255.255.252
+#no shutdown
+#ex
+
+ON SERVER
+#ipv4 198.51.100.2
+#default geteway 198.51.100.1
+#dns-server 198.51.100.2
+#name:payments.retail.com
+#Add 198.51.100.2
+
+ON EDGE-R1
+#sh ip route 
+#ip route 0.0.0.0 0.0.0.0 203.0.113.1

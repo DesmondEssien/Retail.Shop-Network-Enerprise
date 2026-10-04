@@ -1,0 +1,15 @@
+ON FRONT-STORE-SW1
+#int vlan 99
+#description SWITCH-MANAGEMENT
+#ip add 192.168.99.2 255.255.255.0
+#no shutdown
+#ip default-gateway 192.168.99.1
+#end
+
+ON BACK-STORE-SW1
+#int vlan 99
+#description SWITCH-MANAGEMENT
+#ip add 192.168.99.3 255.255.255.0
+#no shutdown
+#ip default-gateway 192.168.99.1
+#end

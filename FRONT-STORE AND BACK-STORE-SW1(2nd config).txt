@@ -1,0 +1,46 @@
+ON FRONT-STORE-SW1
+#int range fa0/1-4
+#description POS-REGISTERS
+#switchport mode access
+#switchport access vlan 10
+#spanning-tree portfast
+#spanning-tree bpduguard enable
+#do wr
+#end
+
+#int range fa0/5-7
+#desription SELF-CHECKOUT
+#switchport mode access
+#switchport access vlan 20
+#spanning-tree portfast
+#spanning-tree bpduguard enable
+#do wr
+# ex
+
+#int fa0/8
+#switchport mode access
+#switchport access vlan 40
+#spanning-tree portfast
+#spanning-tree bpduguard enable
+#do wr
+# ex
+
+
+BACK-STORE-SW1
+#int range fa0/1-2
+#desription BACK-OFFICE-PCS
+#switchport mode access 
+#switchport access vlan 30
+#spanning-tree portfast
+#spanning-tree bpduguard enable
+#do wr
+#ex
+
+#int fa0/3
+#description NETWORK-PRINTER
+#switchport mode access
+#switchport access vlan 50
+#spanning-tree portfast
+#spanning-tree bpduguard enable
+#do wr
+#ex

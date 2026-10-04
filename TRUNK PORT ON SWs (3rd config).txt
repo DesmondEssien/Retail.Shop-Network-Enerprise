@@ -1,0 +1,40 @@
+TRUNK PORTS ON THE SWITCHES
+
+FOR FRONT-STORE-SW1
+#int g0/1
+#description TRUNK-TO-L3-SW1
+#sw mode trunk
+#sw trunk allowed vlan 10,20,40,99
+#no shutdown
+#do wr
+# ex
+
+
+FOR BACK-STORE-SW1
+#int g0/2
+#description TRUNK-TO-L3-SW1
+#sw mode trunk
+#sw trunk allowed vlan 40,50,99
+#no shutdown
+#do wr 
+#ex
+
+FOR L3-SW1
+#int g0/1
+#description TRUNK-TO-FRONT-STORE
+#sw trunk encapsulation dot1q
+#sw mode trunk
+#sw trunk allowed vlan 10,20,40,99
+#no shutdown
+#do wr
+#ex
+
+#int g0/2
+#description TRUNK-TO-BACK-STORE
+#sw trunk encapsulation dot1q
+#sw mode trunk
+#sw trunk allowed vlan 30,50,99
+#no shutdown
+#do wr
+#ex
+#do sh int trunk

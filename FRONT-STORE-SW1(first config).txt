@@ -1,0 +1,26 @@
+# hostname FRONT-STORE-SW1
+# no domain-lookup
+# enable secret ----(password of your choice)
+# service password-encryption
+# banner mot #
+AUTHORIZED ACCESS ONLY
+#
+#end
+
+# vlan 10
+#name POS
+#vlan 20
+#name SELF_CHECKOUT
+#vlan 30
+#name BACK-STORE
+#vlan 40
+#name GUEST_WIFI
+#vlan 50
+#name PRINTER
+#Vlan 99
+#name MANAGEMENT
+#vlan 999
+#name UNUSED
+#do wr
+#end
+

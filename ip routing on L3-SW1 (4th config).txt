@@ -1,0 +1,62 @@
+#ip routing
+#end
+#int vlan
+#desrciption POS-GATEWAY
+#ip add 192.168.10.1 255.255.255.0
+#ex
+#int vlan 20
+#description SELF-CHECKOUT-GATEWAY
+#ip add 192.168.20.1 255.255.255.0
+#ex
+#int vlan 30
+#desrciption BACK-STORE-GATEWAY
+#ip address 192.169.30.1 255.255.255.0
+#ex
+#int vlan 40
+#desription GUEST-WIFI-GATEWAY
+#ip address 192.168.40.1 255.255.255.0
+#ex
+#int vlan 50
+#description PRINTER-GATEWAY
+#ip add 192.168.50.1 255.255.255.0
+#ex
+#int vlan 99
+#description MANAGEMNT-GATEWAY
+#ip add 192.168.99.1 255.255.255.0
+#ex
+
+DHCP
+#ip dhcp excluded-address 192.168.10.1 192.168.10.20
+#ip dhcp excluded-address 192.168.20.1 192.168.20.20
+#ip dhcp excluded-address 192.168.30.1 192.168.30.20
+#ip dhcp excluded-address 192.168.40.1 192.168.40.20
+#end
+#ip dhcp pool POS
+#network 192.168.10.0 255.255.255.0
+#default-router 192.168.10.1
+#dns-server 198.51.100.2
+
+#ip dhcp pool SELF_CHECKOUT
+#network 192.168.20.0 255.255.255.0
+#default-router 192.168.20.1
+#dns-server 198.51.100.2
+
+#ip dhcp pool BACK_STORE_SW1
+#network 192.168.30.3 255.255.255.0
+#default-router 192.168.30.1
+#dns-server 198.51.100.2
+
+#ip dhcp pool GUEST_WIFI
+#network 192.168.40.0 255.255.255.0
+#default-router 192.168.0.1
+#dns-server 198.51.100.2
+
+STATIC CONFIG ON PRINTER
+IPV4 address 192.168.50.0
+subnet 255.255.255.0
+default-gateway 192.168.50.1
+dns-server 198.51.100.2
+
+
+
+

@@ -1,0 +1,23 @@
+The Devices needed
+1 Server-PT(PAYMENT SERVER)
+2 Routers 2911(ISP-R1 and Edge-R1)
+1 L3-SW1 3560-24PS
+Access Point(For Guest_WiFi)
+2 2960 SWs(FRONT-STORE AND BACK-STORE)
+1 PINTER
+2 PCs(BACK-STORE MANAGER AND INVENTORY)
+4 POS PCs( CONNECTED TO SW1 OF FRONT-STORE)
+3 SCO PCs(TO FRONT-STORE)
+
+CABLE CONNECTIONS
+4 POS PCs(fa0/1-4) to FRONT-STORE SW1(automatic cable)
+3 SCO PCs(fa0/5-7) to FRONT-STORE SW(automatic cable)
+AP(fa0/8) to FRONT-STORE SW(automatic cable)
+FRONT-STORE SW L3-SW1)gig0/1) use copper cross-over cable
+MANAGER PC(fa0/1) to BACK-STORE SW(automatic cable)
+INVENTORY PC(fa0/2) to BACK-STORE SW(automatic cable)
+PRINTER(fa0/3) to BACK-STORE(automatic cable)
+L3-SW1 TO BACK-STORE(gig0/2) copper cross-over cable
+L3-SW1(fa0/1) to Edge R1(gig0/1) straight through cable
+EDGE-R1(gig0/0) to ISP(gig0/1) automatic cable
+ISP-R1(gig0/1) to SERVER automatic cable
